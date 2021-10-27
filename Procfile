@@ -1,1 +1,1 @@
-web: gunicorn inscripcionesTkd.wsgi --log-file -
+web: cd inscripcionesTkd && gunicorn inscripcionesTkd.wsgi --log-file -
