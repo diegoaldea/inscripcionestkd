@@ -28,7 +28,7 @@ class Competidor(models.Model):
     categoria = CharField(max_length=100, verbose_name="categoría", null = False, blank = False, choices = categoriaChoices)
     graduacion = CharField(max_length=100, verbose_name="graduación", null = False, blank = False, choices = graduacionChoices)
     academia = CharField(max_length = 100, null = False, blank = False)
-    instructor = CharField(max_length=100, null = True, blank = True)
+    instructor = CharField(max_length=100, null = False, blank = False)
     celular = IntegerField(null = False, blank = False)
     dni = IntegerField(unique = True, null = False, blank = False)
 
