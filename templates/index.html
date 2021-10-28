@@ -10,11 +10,19 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
         
+        <script src="https://kit.fontawesome.com/f604983684.js" crossorigin="anonymous"></script>
         {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}">
     </head>
 <body>
     
+    <div class="logo">
+        <img src="{% static '/img/logo-torneo.png' %}" class="img">
+        <h1>FORMULARIO DE INSCRIPCIÓN</h1>
+        <i class="fas fa-chevron-down arrow"></i>
+        
+    </div>
+
     <div class="cont-form">
         
         <form action="" class="form" method="POST">
@@ -45,6 +53,19 @@
                 <td>{{competidor.academia}}</td>
             </tr>
             {% endfor %}
+        </table>
+        {% else %}
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Categoría</th>
+                <th>Graduación</th>
+                <th>Academia</th>
+            </tr>
+            <tr>
+                por el momento no hay competidores inscriptos
+            </tr>
         </table>
 
     {% endif %}

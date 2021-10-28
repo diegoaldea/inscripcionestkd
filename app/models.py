@@ -25,14 +25,15 @@ class Competidor(models.Model):
 
     nombre = CharField(max_length=30, null = False, blank = False)
     apellido = CharField(max_length=30, null = False, blank = False)
-    categoria = CharField(max_length=100, null = False, blank = False, choices = categoriaChoices)
-    graduacion = CharField(max_length=100, null = False, blank = False, choices = graduacionChoices)
+    categoria = CharField(max_length=100, verbose_name="categoría", null = False, blank = False, choices = categoriaChoices)
+    graduacion = CharField(max_length=100, verbose_name="graduación", null = False, blank = False, choices = graduacionChoices)
     academia = CharField(max_length = 100, null = False, blank = False)
+    instructor = CharField(max_length=100, null = True, blank = True)
     celular = IntegerField(null = False, blank = False)
     dni = IntegerField(unique = True, null = False, blank = False)
 
     def __str__(self) -> str:
-        return self.nombre + " " + self.apellido
+        return self.nombre + " " + self.apellido + " /// " + self.academia
     class Meta:
         verbose_name = "Competidor"
         verbose_name_plural = "Competidores"

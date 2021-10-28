@@ -6,6 +6,7 @@ def index(request):
     inscripcion_form = inscripcionForm()
     competidores = Competidor.objects.order_by('id')
 
+
     if request.method == 'POST':
         inscripcion_form = inscripcionForm(request.POST)
         if inscripcion_form.is_valid():
@@ -19,11 +20,3 @@ def index(request):
     
     return render(request, 'index.html', context)
 
-def administrador(request):
-    competidores = Competidor.objects.order_by()
-
-    context = {
-        'competidores':competidores
-    }
-
-    return render(request, 'administrador.html', context)

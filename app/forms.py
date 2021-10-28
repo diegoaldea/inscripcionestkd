@@ -5,6 +5,6 @@ from .models import Competidor
 class inscripcionForm(ModelForm):
     class Meta:
         model = Competidor
-        fields = ['nombre', 'apellido', 'categoria', 'graduacion', 'academia', 'celular', 'dni']
+        fields = ['nombre', 'apellido', 'categoria', 'graduacion', 'academia', 'instructor', 'celular', 'dni']
 
         
